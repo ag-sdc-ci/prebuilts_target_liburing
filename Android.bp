@@ -1,0 +1,51 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+prebuilt_apex {
+    name: "org.blisslabs.ag.liburing",
+    apex_name: "org.blisslabs.ag.liburing",
+    source_apex_name: "org.blisslabs.ag.liburing",
+    arch: {
+        x86_64: {
+            src: "org.blisslabs.ag.liburing.apex",
+        },
+    },
+    filename: "org.blisslabs.ag.liburing.apex",
+    prefer: true,
+    installable: true,
+}
+
+prebuilt_apex {
+    name: "org.blisslabs.ag.ext.liburingutils",
+    apex_name: "org.blisslabs.ag.ext.liburingutils",
+    source_apex_name: "org.blisslabs.ag.ext.liburingutils",
+    arch: {
+        x86_64: {
+            src: "org.blisslabs.ag.ext.liburingutils.apex",
+        },
+    },
+    filename: "org.blisslabs.ag.ext.liburingutils.apex",
+    prefer: true,
+    installable: true,
+}
+
+cc_library {
+    name: "liburingutils",
+    host_supported: true,
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    srcs: [
+        "src/IOUringSocketHandler.cpp",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "libbase",
+        "liblog",
+    ],
+}

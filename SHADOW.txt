@@ -1,0 +1,6 @@
+shadow prebuilt repo: liburing (target)
+  upstream: external/liburing
+  api-level: 32 (branch 32-20261016)
+  blobs: org.blisslabs.ag.liburing.apex org.blisslabs.ag.liburing.dev.apex org.blisslabs.ag.liburing.doc.apex org.blisslabs.ag.ext.liburingutils.apex
+  dev-src: includes liburingutils sources and Android.bp
+  date: 2026-10-16
